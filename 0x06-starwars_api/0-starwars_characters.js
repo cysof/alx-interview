@@ -2,6 +2,13 @@
 
 const request = require('request');
 
+/**
+ * Recursively makes HTTP requests to fetch character names from an external API.
+ *
+ * @param {Array} arr - An array of URLs to fetch character names from.
+ * @param {number} i - The index of the current URL in the array.
+ * @return {void} This function does not return anything.
+ */
 const req = (arr, i) => {
   if (i === arr.length) return;
   request(arr[i], (err, response, body) => {
